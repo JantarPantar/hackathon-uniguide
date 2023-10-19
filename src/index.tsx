@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home"
 import Guide from "./pages/Guide"
 import Parking from "./pages/Parking"
+import GuideDetail from "./pages/GuideDetail"
 import Logo from "./assets/UniGuideLogo.png"
 
 const root = ReactDOM.createRoot(
@@ -24,6 +25,7 @@ root.render(
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path='/pamatky' element={<Guide />} />
+          <Route path='/pamatky/:id' element={<GuideDetail />} />
           <Route path='/parkovani' element={<Parking />} />
         </Routes>
       </BrowserRouter>
