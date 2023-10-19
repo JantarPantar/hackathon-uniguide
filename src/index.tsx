@@ -1,23 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home"
 import Guide from "./pages/Guide"
 import Parking from "./pages/Parking"
+import Logo from "./assets/UniGuideLogo.png"
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <div>
-    <nav>
-  <a href='/pamatky'>Pamatky</a>
-  <a href='/parkovani'>Parkovani</a>
-</nav>
 <React.StrictMode>
+    <nav className='navBar'>
+      <a className="LogoW" href="/"><img className='LogoImg' src={Logo} alt='UniGuide Logo'></img></a>
+      <div className='PagesW'>
+        <a className='PageButton' href='/pamatky'><h2>Pamatky</h2></a>
+        <a className='PageButton' href='/parkovani'><h2>Parkovani</h2></a>
+      </div>
+    </nav>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}/>
@@ -26,7 +28,6 @@ root.render(
         </Routes>
       </BrowserRouter>
   </React.StrictMode>
-  </div>
 );
 
 // If you want to start measuring performance in your app, pass a function
