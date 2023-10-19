@@ -1,28 +1,34 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import {Routes,Route} from "react-router-dom"
+import React, { useState } from "react";
+import { Map, Marker,Overlay,GeoJson } from "pigeon-maps"
+import {ReactComponent as ReactLogo} from '../assets/Point.svg';
 
-function App() {
-    const [Hrady, setHrady] = useState<any>([]);
-    const [Kluby, setKluby] = useState<any>([]);
-    const [Zamky, setZamky] = useState<any>([]);
-    const [Divadla, setDivadla] = useState<any>([]);
-    const [Rozhledny, setRozhledny] = useState<any>([]);
+
+export function FetchService() {
+
+  const [Hrady, setHrady] = useState([]);
+  const [Kluby, setKluby] = useState([]);
+  const [Zamky, setZamky] = useState([]);
+  const [Divadla, setDivadla] = useState([]);
+  const [Rozhledny, setRozhledny] = useState([]);
+
+  fetch("http://localhost:3000/DataBackup/Hrady.geo.json").then(response => response.json())
+  .then(data => setHrady(data.features))
+  .catch(error => console.error(error));
+  fetch("http://localhost:3000/DataBackup/Kluby.geo.json").then(response => response.json())
+  .then(data => setKluby(data.features))
+  .catch(error => console.error(error));
+  fetch("http://localhost:3000/DataBackup/Divadla.geo.json").then(response => response.json())
+  .then(data => setDivadla(data.features))
+  .catch(error => console.error(error));
+  fetch("http://localhost:3000/DataBackup/Rozhledny.geo.json").then(response => response.json())
+  .then(data => setRozhledny(data.features))
+  .catch(error => console.error(error));
+  fetch("http://localhost:3000/DataBackup/Zamky.geo.json").then(response => response.json())
+  .then(data => setZamky(data.features))
+  .catch(error => console.error(error));
   
-
-
-    setZamky(FetchData("https://services6.arcgis.com/ogJAiK65nXL1mXAW/arcgis/rest/services/Zámky/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson","http://localhost:3000/DataBackup/Zamky.geo.json"))
-    setHrady(FetchData("https://services6.arcgis.com/ogJAiK65nXL1mXAW/arcgis/rest/services/Hrady/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson","http://localhost:3000/DataBackup/Hrady.geo.json"))
-    setKluby(FetchData("https://services6.arcgis.com/ogJAiK65nXL1mXAW/arcgis/rest/services/Kluby/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson","http://localhost:3000/DataBackup/Kluby.geo.json"))
-    setDivadla(FetchData("https://services6.arcgis.com/ogJAiK65nXL1mXAW/arcgis/rest/services/Divadla/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson","http://localhost:3000/DataBackup/Divadla.geo.json"))
-    setRozhledny(FetchData("https://services6.arcgis.com/ogJAiK65nXL1mXAW/arcgis/rest/services/Rozhledny_a_vyhlídky/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson","http://localhost:3000/DataBackup/Rozhledny.geo.json"))
-    function FetchData(url:any, backupUrl:any){
-        fetch(url).then(response => response.json())
-        .then(data => {return(data.features)})
-        .catch(()=>fetch(backupUrl).then(response => response.json()).then(data => {return(data.features)}));
-        return
-    }
-const data = Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat(Rozhledny)))).sort( function (a:any, b:any) {
+  const data =
+   Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat(Rozhledny)))).sort( function (a:any, b:any) {
     var myLong = 15.6252330;
     var myLat = 49.8022514;
     var diffA = (a.properties.y - myLat) + (a.properties.y - myLat);
@@ -38,9 +44,11 @@ const data = Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat(Rozhledny))))
 
 } );
 
-  return (
-    {data}
-  );
-}
+  
 
-export default App;
+  
+
+    return (
+      {data}
+    );
+  }
