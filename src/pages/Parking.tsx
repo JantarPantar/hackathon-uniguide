@@ -1,14 +1,17 @@
-import React from 'react';
-import { Map,GeoJsonLoader } from "pigeon-maps"
+import React, { useState } from 'react';
+import { Map,GeoJsonLoader,Draggable, Point,Marker } from "pigeon-maps"
 import { maptiler } from 'pigeon-maps/providers'
 
 
 function App() {
   const maptilerProvider = maptiler('qxI5FZYAhQOyNwRo5kY4', 'streets')
+
+    const [anchor, setAnchor] = useState<Point>([50.19296138642234, 15.838750875870064]);
+
   return (
     <div className="App">
       
-       <Map provider={maptilerProvider} height={500} defaultCenter={[ 50.19296138642234, 15.838750875870064]} defaultZoom={12}>
+       <Map provider={maptilerProvider} height={500} defaultCenter={[ 50.19296138642234, 15.838750875870064]} defaultZoom={14}>
 
 
         <GeoJsonLoader
@@ -20,6 +23,9 @@ function App() {
           }
           onClick={(pa) => alert("pocet mist:" +pa.payload.properties.POC_MIST)}
           />
+          <Draggable offset={[60, 87]} anchor={anchor} onDragEnd={setAnchor}>
+            <Marker color='red' width={50}  />
+          </Draggable>
       </Map>
     </div>
   );
