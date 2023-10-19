@@ -42,33 +42,35 @@ function App() {
     }
   }
   return (
-    <div className='Body'>
-        <h1>Negr</h1>
-
-        <div >
-          <Map provider={maptilerProvider} height={500} width={1000} center={[geo[0],geo[1]]} zoom={zoom}>
-            {FetchService().data.map((number:any) =>      
-              <Marker onMouseOver={() => {setPosition([number.properties.y, number.properties.x]);setHover(number.properties.nazev)}} onMouseOut={() => setHover("")} color={GetColor(number.properties.dp_id)} width={50} anchor={[number.properties.y, number.properties.x]} />
-            )}
-            <Overlay anchor={[position[0], position[1]]} offset={[40,10]} >
-              <h4>{hover}</h4>
-            </Overlay>
-          </Map>
-          <div>
-
-            {FetchService().data.map((item:any) =>
-              <div onClick={()=>{setGeo([item.properties.y,item.properties.x]);setZoom(17)}}>
-                  <div style={{'backgroundColor':GetColor(item.properties.dp_id)}}></div>
-                  <div>
-                    <p>{item.properties.nazev}</p>
-                    <a target='_blank' href={item.properties.www}>Web</a>
-                  </div>
+    <div className='GuideBox'>
+      <div>
+        <label className='CategoryCheckbox'><span data-text="Kluby"></span><input type="checkbox" /></label>
+        <label className='CategoryCheckbox'><span data-text="Hrady"></span><input type="checkbox" /></label>
+        <label className='CategoryCheckbox'><span data-text="Zamky"></span><input type="checkbox" /></label>
+        <label className='CategoryCheckbox'><span data-text="Kina"></span><input type="checkbox" /></label>
+        <label className='CategoryCheckbox'><span data-text="Rozhledny"></span><input type="checkbox" /></label>
+        <label className='CategoryCheckbox'><span data-text="Muzea a galerie"></span><input type="checkbox" /></label>
+        <label className='CategoryCheckbox'><span data-text="Divadla a filharmonie"></span><input type="checkbox" /></label>
+      </div>
+      <Map provider={maptilerProvider} height={500} width={1550} center={[geo[0],geo[1]]} zoom={zoom}>
+        {FetchService().data.map((number:any) =>      
+          <Marker onMouseOver={() => {setPosition([number.properties.y, number.properties.x]);setHover(number.properties.nazev)}} onMouseOut={() => setHover("")} color={GetColor(number.properties.dp_id)} width={50} anchor={[number.properties.y, number.properties.x]} />
+        )}
+        <Overlay anchor={[position[0], position[1]]} offset={[40,10]} >
+          <h4>{hover}</h4>
+        </Overlay>
+      </Map>
+      <div>
+        {FetchService().data.map((item:any) =>
+          <div onClick={()=>{setGeo([item.properties.y,item.properties.x]);setZoom(17)}}>
+              <div style={{'backgroundColor':GetColor(item.properties.dp_id)}}></div>
+              <div>
+                <p>{item.properties.nazev}</p>
+                <a target='_blank' href={item.properties.www}>Web</a>
               </div>
-            )}
-            
           </div>
-        </div>
-
+        )}
+      </div>
     </div>
   );
 }

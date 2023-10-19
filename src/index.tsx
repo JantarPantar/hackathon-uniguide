@@ -16,8 +16,8 @@ root.render(
       <nav className='navBar'>
         <a className="LogoW" href="/"><img className='LogoImg' src={Logo} alt='UniGuide Logo'></img></a>
         <div className='PagesW'>
-          <a className='PageButton' href='/pamatky'><h2>Pamatky</h2></a>
-          <a className='PageButton' href='/parkovani'><h2>Parkovani</h2></a>
+          <a className='PageButton' href='/pamatky'><h2>Průvodce</h2></a>
+          <a className='PageButton' href='/parkovani'><h2>Parkoviště</h2></a>
         </div>
       </nav>
       <BrowserRouter>

@@ -99,3 +99,28 @@ code {
   width: 60vw;
   height: 88vh;
 }
+
+/*Guide Page*/
+
+.GuideBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CategoryCheckbox{
+  background-color: #001F54;
+  color: #FEFCFB;
+  font-size: 18px;
+  padding:10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.CategoryCheckbox:hover{
+  color: #dbdbdb;
+}
+
+[data-text]::after {
+  content: attr(data-text);
+}
