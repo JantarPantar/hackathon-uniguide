@@ -36,8 +36,8 @@ export function FetchService() {
   .catch(error => console.error(error));
 
   
-  const data =
-   Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat(Rozhledny.concat(Kina.concat(Muzea)))))).sort( function (a:any, b:any) {
+  const data =Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat((Rozhledny.concat(Kina.concat(Muzea)))))));
+   Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat(Rozhledny)))).sort( function (a:any, b:any) {
     var myLong = 15.6252330;
     var myLat = 49.8022514;
     var diffA = (a.properties.y - myLat) + (a.properties.y - myLat);
