@@ -12,14 +12,14 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-<React.StrictMode>
-    <nav className='navBar'>
-      <a className="LogoW" href="/"><img className='LogoImg' src={Logo} alt='UniGuide Logo'></img></a>
-      <div className='PagesW'>
-        <a className='PageButton' href='/pamatky'><h2>Pamatky</h2></a>
-        <a className='PageButton' href='/parkovani'><h2>Parkovani</h2></a>
-      </div>
-    </nav>
+    <React.StrictMode>
+      <nav className='navBar'>
+        <a className="LogoW" href="/"><img className='LogoImg' src={Logo} alt='UniGuide Logo'></img></a>
+        <div className='PagesW'>
+          <a className='PageButton' href='/pamatky'><h2>Pamatky</h2></a>
+          <a className='PageButton' href='/parkovani'><h2>Parkovani</h2></a>
+        </div>
+      </nav>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}/>
@@ -27,7 +27,7 @@ root.render(
           <Route path='/parkovani' element={<Parking />} />
         </Routes>
       </BrowserRouter>
-  </React.StrictMode>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

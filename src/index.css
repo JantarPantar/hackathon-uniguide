@@ -1,10 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Inika;
+  background-color: #FEFCFB;
 }
 
 code {
@@ -12,9 +9,12 @@ code {
     monospace;
 }
 
+/*Index navbar*/
+
 .navBar{
-  height: 12vh;
+  height: 10vh;
   width: 100vw;
+  padding: 1vh 0;
   display: flex;
   flex-direction: row;
 }
@@ -30,7 +30,7 @@ code {
 
 .LogoImg{
   height: 80%;
-  margin-left: 5%;
+  margin-left: 2vw;
 }
 
 .PagesW{
@@ -44,7 +44,58 @@ code {
 }
 
 .PageButton{
-  font-family: 'Inika';font-size: 25px;
+  font-family: 'Inika';font-size: 24px;
   color: #0A1128;
   text-decoration: none;
+}
+
+/*Landing Page (Home)*/
+
+.HomeBox1{
+  display: flex;
+  flex-direction: row;
+  height: 88vh;
+  width: 100vw;
+}
+
+.HomeW1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%
+}
+
+.LandingTitle{
+  font-size: 80px;
+  color: #034078;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.LandingTitle > strong{
+  color: #0A1128;
+}
+
+.LandingUnderTitle{
+  font-size: 40px;
+  color: #0A1128;
+  max-width: 80%;
+  text-align: center;
+  margin: 0;
+}
+
+.LandingUnderTitle > strong{
+  color: #034078;
+}
+
+.HomeW2{
+  display: flex;
+  width: 60%;
+}
+
+.LandingPageImage{
+  width: 60vw;
+  height: 88vh;
 }
