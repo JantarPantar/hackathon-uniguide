@@ -8,23 +8,23 @@ import { BusFormPoint } from '../services/BusFromPoint';
 
 function App() {
   const maptilerProvider = maptiler('qxI5FZYAhQOyNwRo5kY4', 'streets')
-  
-  const { id } = useParams();
-  const asd = FetchService().data.filter(function (i:any){
-    return i.properties.dp_id===id;
-});
+  const [data, setData] = useState<any>()
 
-  //console.log(asd)
-    
+  const { id } = useParams();
+
+  useEffect(() => {
+    FetchService().data.filter(function (i:any){
+      setData(i.properties.dp_id===id)
+    });
+  }, []);
 
   return (
     <div className='GuideBox'>
       <Map>
-        
+
       </Map>
-      {JSON.stringify(asd)}
+      {JSON.stringify(data)}
       <br/>
-      {JSON.stringify(JSON.stringify(asd))}
     </div>
   );
 }

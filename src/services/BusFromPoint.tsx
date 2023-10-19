@@ -21,5 +21,5 @@ export function BusFormPoint(possition:any){
       data = Bus[a].geometry.coordinates;
     }
   }
-console.log({data})
+  return(data)
 }

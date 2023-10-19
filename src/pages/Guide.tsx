@@ -29,25 +29,25 @@ function App() {
 
   function RenderMarker(value:any){
     if (value.properties.dp_id.includes("HRAD") && Hrady === true) {
-      return <Marker onClick={()=>navigate(`/pamatky/`+value.properties.dp_id)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev);}} onMouseOut={() => setHover("")} color={"#989595"} width={50} anchor={[value.properties.y, value.properties.x]} />
+      return <Marker onClick={() => (value.properties.www ? window.open(value.properties.www) : null)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev);}} onMouseOut={() => setHover("")} color={"#989595"} width={50} anchor={[value.properties.y, value.properties.x]} />
     }
     if (value.properties.dp_id.includes("ZAMKY") && Zamky === true) {
-      return <Marker onClick={()=>navigate(`/pamatky/`+value.properties.dp_id)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#cdc1c1"} width={50} anchor={[value.properties.y, value.properties.x]} />
+      return <Marker onClick={() => (value.properties.www ? window.open(value.properties.www) : null)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#cdc1c1"} width={50} anchor={[value.properties.y, value.properties.x]} />
     }
     if (value.properties.dp_id.includes("ROZHL") && Rozhledny === true) {
-      return <Marker onClick={()=>navigate(`/pamatky/`+value.properties.dp_id)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#90d285"} width={50} anchor={[value.properties.y, value.properties.x]} />
+      return <Marker onClick={() => (value.properties.www ? window.open(value.properties.www) : null)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#90d285"} width={50} anchor={[value.properties.y, value.properties.x]} />
     }
     if (value.properties.dp_id.includes("KINA") && Kina === true) {
-      return <Marker onClick={()=>navigate(`/pamatky/`+value.properties.dp_id)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#6b8ea4"} width={50} anchor={[value.properties.y, value.properties.x]} />
+      return <Marker onClick={() => (value.properties.www ? window.open(value.properties.www) : null)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#6b8ea4"} width={50} anchor={[value.properties.y, value.properties.x]} />
     }
     if (value.properties.dp_id.includes("DIVFILH") && DivadlaAfilharmonie === true) {
-      return <Marker onClick={()=>navigate(`/pamatky/`+value.properties.dp_id)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#9c7e5f"} width={50} anchor={[value.properties.y, value.properties.x]} />
+      return <Marker onClick={() => (value.properties.www ? window.open(value.properties.www) : null)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#9c7e5f"} width={50} anchor={[value.properties.y, value.properties.x]} />
     }
     if (value.properties.dp_id.includes("KLUB") && Kluby === true) {
-      return <Marker onClick={()=>navigate(`/pamatky/`+value.properties.dp_id)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#14aad0"} width={50} anchor={[value.properties.y, value.properties.x]} />
+      return <Marker onClick={() => (value.properties.www ? window.open(value.properties.www) : null)}onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#14aad0"} width={50} anchor={[value.properties.y, value.properties.x]} />
     }
     if (value.properties.dp_id.includes("MG") && MuzeaAgalerie === true) {
-      return <Marker onClick={()=>navigate(`/pamatky/`+value.properties.dp_id)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#a188cb"} width={50} anchor={[value.properties.y, value.properties.x]} />
+      return <Marker onClick={() => (value.properties.www ? window.open(value.properties.www) : null)} onMouseOver={() => {setPosition([value.properties.y, value.properties.x]);setHover(value.properties.nazev)}} onMouseOut={() => setHover("")} color={"#a188cb"} width={50} anchor={[value.properties.y, value.properties.x]} />
     }
   }
 
