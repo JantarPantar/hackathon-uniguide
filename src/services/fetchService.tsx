@@ -10,6 +10,8 @@ export function FetchService() {
   const [Zamky, setZamky] = useState([]);
   const [Divadla, setDivadla] = useState([]);
   const [Rozhledny, setRozhledny] = useState([]);
+  const [Kina, setKina] = useState([]);
+  const [Muzea, setMuzea] = useState([]);
 
   fetch("http://localhost:3000/DataBackup/Hrady.geo.json").then(response => response.json())
   .then(data => setHrady(data.features))
@@ -26,9 +28,16 @@ export function FetchService() {
   fetch("http://localhost:3000/DataBackup/Zamky.geo.json").then(response => response.json())
   .then(data => setZamky(data.features))
   .catch(error => console.error(error));
+  fetch("http://localhost:3000/DataBackup/Kina.geo.json").then(response => response.json())
+  .then(data => setKina(data.features))
+  .catch(error => console.error(error));
+  fetch("http://localhost:3000/DataBackup/Muzea.geo.json").then(response => response.json())
+  .then(data => setMuzea(data.features))
+  .catch(error => console.error(error));
+
   
   const data =
-   Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat(Rozhledny)))).sort( function (a:any, b:any) {
+   Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat(Rozhledny.concat(Kina.concat(Muzea)))))).sort( function (a:any, b:any) {
     var myLong = 15.6252330;
     var myLat = 49.8022514;
     var diffA = (a.properties.y - myLat) + (a.properties.y - myLat);
@@ -40,14 +49,7 @@ export function FetchService() {
         return -1;
     } else {
         return 0; 
-    }
-
-} );
-
-  
-
-  
-
+    }});
     return (
       {data}
     );

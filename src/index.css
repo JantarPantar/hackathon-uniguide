@@ -102,15 +102,29 @@ code {
 
 /*Guide Page*/
 
+.HoverName{
+  width: 200px;
+  text-align: center;
+}
+
 .GuideBox{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.GuideTitle{
+  Font-size: 40px;
+}
+
+.CategoryCheckboxesW{
+  margin-top: 55px;
+  height: 50px;
+}
+
 .CategoryCheckbox{
-  background-color: #001F54;
-  color: #FEFCFB;
+  border-radius: 8px;
+  color: #0A1128;
   font-size: 18px;
   padding:10px;
   margin: 10px;
@@ -118,7 +132,41 @@ code {
 }
 
 .CategoryCheckbox:hover{
-  color: #dbdbdb;
+  color: #3f3f40;
+}
+
+.CategoryCheckbox > input{
+  accent-color: #0A1128;
+}
+
+#Kluby{
+  background-color: #14aad0;
+}
+
+#Hrady{
+  background-color: #989595;
+}
+
+
+#Zamky{
+  background-color: #cdc1c1;
+}
+
+#Kina{
+  background-color: #6b8ea4;
+}
+
+
+#Rozhledny{
+  background-color: #90d285;
+}
+
+#MuzeaAgalerie{
+  background-color: #a188cb;
+}
+
+#DivadlaAfilharmonie{
+  background-color: #9c7e5f;
 }
 
 [data-text]::after {
