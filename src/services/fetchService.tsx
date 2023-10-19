@@ -27,7 +27,7 @@ export function FetchService() {
   .then(data => setZamky(data.features))
   .catch(error => console.error(error));
   
-  const data =
+  const data =Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat(Rozhledny))));
    Zamky.concat(Hrady.concat(Kluby.concat(Divadla.concat(Rozhledny)))).sort( function (a:any, b:any) {
     var myLong = 15.6252330;
     var myLat = 49.8022514;

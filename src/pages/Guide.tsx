@@ -61,7 +61,7 @@ function App() {
         </Overlay>
       </Map>
       <div>
-        {FetchService().data.map((item:any) =>
+        {JSON.parse(JSON.stringify(FetchService())).data.map((item:any) =>
           <div onClick={()=>{setGeo([item.properties.y,item.properties.x]);setZoom(17)}}>
               <div style={{'backgroundColor':GetColor(item.properties.dp_id)}}></div>
               <div>
