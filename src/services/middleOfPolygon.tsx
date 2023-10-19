@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Map, Marker,Overlay,GeoJson } from "pigeon-maps"
 import {ReactComponent as ReactLogo} from '../assets/Point.svg';
-import * as turf from '@turf/center'
-
 
 
 export function MiddleOfPolygon(array:any,possition:any){
