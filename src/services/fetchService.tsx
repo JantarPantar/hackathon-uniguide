@@ -13,25 +13,25 @@ export function FetchService() {
   const [Kina, setKina] = useState([]);
   const [Muzea, setMuzea] = useState([]);
 
-  fetch("http://localhost:3000/DataBackup/Hrady.geo.json").then(response => response.json())
+  fetch("./DataBackup/Hrady.geo.json").then(response => response.json())
   .then(data => setHrady(data.features))
   .catch(error => console.error(error));
-  fetch("http://localhost:3000/DataBackup/Kluby.geo.json").then(response => response.json())
+  fetch("./DataBackup/Kluby.geo.json").then(response => response.json())
   .then(data => setKluby(data.features))
   .catch(error => console.error(error));
-  fetch("http://localhost:3000/DataBackup/Divadla.geo.json").then(response => response.json())
+  fetch("./DataBackup/Divadla.geo.json").then(response => response.json())
   .then(data => setDivadla(data.features))
   .catch(error => console.error(error));
-  fetch("http://localhost:3000/DataBackup/Rozhledny.geo.json").then(response => response.json())
+  fetch("./DataBackup/Rozhledny.geo.json").then(response => response.json())
   .then(data => setRozhledny(data.features))
   .catch(error => console.error(error));
-  fetch("http://localhost:3000/DataBackup/Zamky.geo.json").then(response => response.json())
+  fetch("./DataBackup/Zamky.geo.json").then(response => response.json())
   .then(data => setZamky(data.features))
   .catch(error => console.error(error));
-  fetch("http://localhost:3000/DataBackup/Kina.geo.json").then(response => response.json())
+  fetch("./DataBackup/Kina.geo.json").then(response => response.json())
   .then(data => setKina(data.features))
   .catch(error => console.error(error));
-  fetch("http://localhost:3000/DataBackup/Muzea.geo.json").then(response => response.json())
+  fetch("./DataBackup/Muzea.geo.json").then(response => response.json())
   .then(data => setMuzea(data.features))
   .catch(error => console.error(error));
 

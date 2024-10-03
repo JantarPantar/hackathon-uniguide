@@ -23,7 +23,7 @@ function App() {
 
   const maptilerProvider = maptiler('qxI5FZYAhQOyNwRo5kY4', 'streets')
 
-  fetch("http://localhost:3000/Data/Architekt.geo.json").then(response => response.json())
+  fetch("./Data/Architekt.geo.json").then(response => response.json())
   .then(data => setData(data.features))
   .catch(error => console.error(error));
 

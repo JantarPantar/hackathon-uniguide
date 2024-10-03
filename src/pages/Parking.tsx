@@ -12,7 +12,7 @@ function App() {
   const [markerAnchor, setMarkerAnchor] = useState<Point>([0, 0]);
   const [data, setData] = useState<any>();
 
-    fetch("http://localhost:3000/DataBackup/parkoviste3.geo.json").then(response => response.json())
+    fetch("./DataBackup/parkoviste3.geo.json").then(response => response.json())
     .then(data => setParking(data.features))
     .catch(error => console.error(error));
 
@@ -33,7 +33,7 @@ function App() {
       <Map provider={maptilerProvider} height={450} width={1550} defaultCenter={[ 50.19296138642234, 15.838750875870064]} defaultZoom={14}>
         <Marker color="red" anchor={[markerAnchor[1], markerAnchor[0]]}/>
         <GeoJsonLoader
-          link={"http://localhost:3000/DataBackup/parkoviste3.geo.json"}
+          link={"./DataBackup/parkoviste3.geo.json"}
           styleCallback={(feature:any) =>
             feature={ stroke:"#0340788A",fill:"#0340788A",strokeWidth: "2"}
           }
